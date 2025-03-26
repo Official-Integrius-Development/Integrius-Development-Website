@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrius - Information</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        /* General styling for the team member section */
+        .team-member-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 15px; /* Space between profile picture and details */
+        }
+
+        .team-member-avatar {
+            width: 60px; /* Smaller profile pictures */
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .team-member-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-member-details h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .team-member-details p {
+            margin: 3px 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Adjusting the spacing between team members */
+        .fade-in {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px; /* Space between team member cards */
+            justify-content: center;
+        }
+
+        /* You can add more specific styles if needed */
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Integrius - Team Members</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="information.html">Owners</a></li>
+            <li><a href="update.html">Updates</a></li>
+            <li><a href="meettheteam.html">Meet The Team</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="Information" class="fade-in">
+            <h2>Meet the Team!</h2> <!-- Moved "Meet the Team" here -->
+            <div class="team-member-profile">
+                <img src="e9hedixy.png" alt="Team Member 3" class="team-member-avatar">
+                <div class="team-member-details">
+                    <h3>crx nexi</h3>
+                    <p>Role: Sale Team</p>
+                    <p>Status: Online</p>
+                </div>
+            </div>
+            <div class="team-member-profile">
+                <img src="r9byniyr.png" alt="Team Member 4" class="team-member-avatar">
+                <div class="team-member-details">
+                    <h3>Braeden</h3>
+                    <p>Role: Head Of Media</p>
+                    <p>Status: Online</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Integrius Development. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Function to fetch Discord status using Lanyard API
+        function fetchDiscordStatus(userId, elementId) {
+            axios.get(`https://api.lanyard.rest/v1/users/${userId}`)
+                .then(response => {
+                    const status = response.data.data.discord_status;
+                    document.getElementById(elementId).textContent = status.charAt(0).toUpperCase() + status.slice(1);
+                })
+                .catch(error => {
+                    console.error('Error fetching Discord status:', error);
+                    document.getElementById(elementId).textContent = 'Offline';
+                });
+        }
+
+
+    </script>
+
+</body>
+</html>

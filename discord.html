@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Bot - Information</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function showComingSoon() {
+            const message = document.getElementById('coming-soon-message');
+            message.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Discord Bot - Information</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="information.html">Owners</a></li>
+            <li><a href="update.html">Updates</a></li>
+            <li><a href="meettheteam.html">Meet The Team</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="bot-info" class="fade-in">
+            <h2>Bot Overview</h2>
+            <p>Our Discord bot offers a variety of features to enhance your server experience. From music playback to moderation tools, this bot is designed to make managing and enjoying your server easier than ever!</p>
+
+            <div id="bot-features">
+                <div class="feature-item">
+                    <h3>Music Playback</h3>
+                    <p>Listen to music with your friends right in your Discord voice channel! Supports Spotify, YouTube, and more.</p>
+                    <button onclick="showComingSoon()">View More</button>
+                    <p id="coming-soon-message" style="display: none; color: rgb(65, 255, 36);">Do /play and then a song from either YouTube, Spotify, SoundCloud, etc.</p>
+                </div>
+
+            <h2>Invite the Bot to Your Server</h2>
+            <p>Click the button below to add the bot to your Discord server!</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=1348223661001150525&permissions=8&integration_type=0&scope=bot" target="_blank">
+            <button>Invite Bot</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Discord Bot Development. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

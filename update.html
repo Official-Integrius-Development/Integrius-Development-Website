@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrius - Updates</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function showComingSoon() {
+            const message = document.getElementById('coming-soon-message');
+            message.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Integrius - Updates</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="information.html">Owners</a></li>
+            <li><a href="update.html">Updates</a></li>
+            <li><a href="meettheteam.html">Meet The Team</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="Updates" class="fade-in">
+            <h2>Latest Updates</h2>
+            <p>Stay tuned for the latest improvements and new features coming to Integrius.</p>
+
+            <div id="update-list">
+                <div class="update-item">
+                    <h3>New Feature - Bot Commands Overhaul</h3>
+                    <p>We're working on improving the bot's command structure for better usability.</p>
+                    <button onclick="showComingSoon()">View More</button>
+                    <p id="coming-soon-message" style="display: none; color: red;">Coming Soon</p>
+                </div>
+                
+                <div class="update-item">
+                    <h3>UI Improvements</h3>
+                    <p>We've made significant improvements to the user interface for a cleaner look and feel.</p>
+                    <button onclick="showComingSoon()">View More</button>
+                    <p id="coming-soon-message" style="display: none; color: red;">Coming Soon</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Integrius Development. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

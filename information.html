@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrius - Information</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Integrius - Founders</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="information.html">Owners</a></li>
+            <li><a href="update.html">Updates</a></li>
+            <li><a href="meettheteam.html">Meet The Team</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="Information" class="fade-in">
+            <h2>The Owners!</h2>
+            <p>Yes, the very cute owners</p>
+            <div class="owner-profile">
+                <img src="urqkhl08.png" alt="Owner 1" class="owner-avatar">
+                <div class="owner-details">
+                    <h3>Razer.pl</h3>
+                    <p>Role: Supervises the discord and does updates</p>
+                    <p>Staus: The G.O.A.T</p>   
+                </div>
+            </div>
+            <div class="owner-profile">
+                <img src="nelly.jpg" alt="Owner 2" class="owner-avatar">
+                <div class="owner-details">
+                    <h3>Gab</h3>
+                    <p>Role: Developed The Integrius Bot</p>
+                    <p>Status: In love</p>
+                </div>
+            </div>
+            <p>Bot online for <span id="bot-uptime">Loading...</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Integrius Development. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Function to fetch Discord status using Lanyard API
+        function fetchDiscordStatus(userId, elementId) {
+            axios.get(`https://api.lanyard.rest/v1/users/${userId}`)
+                .then(response => {
+                    const status = response.data.data.discord_status;
+                    document.getElementById(elementId).textContent = status.charAt(0).toUpperCase() + status.slice(1);
+                })
+                .catch(error => {
+                    console.error('Error fetching Discord status:', error);
+                    document.getElementById(elementId).textContent = 'Offline';
+                });
+        }
+
+        // Replace with actual Discord user IDs
+        const owner1DiscordId = '1060218097543426268'; // Mateusz
+        const owner2DiscordId = ''; // Gab
+
+        // Fetch statuses
+        fetchDiscordStatus(owner1DiscordId, 'owner1-status');
+        fetchDiscordStatus(owner2DiscordId, 'owner2-status');
+
+        // Function to format uptime
+        function formatUptime(ms) {
+            const seconds = Math.floor(ms / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+            return `${days}d ${hours % 24}h ${minutes % 60}m ${seconds % 60}s`;
+        }
+
+        // Set bot uptime
+        const botStartTime = new Date('2025-03-20T00:00:00Z'); // Replace with actual bot start time
+        setInterval(() => {
+            const uptime = Date.now() - botStartTime;
+            document.getElementById('bot-uptime').textContent = formatUptime(uptime);
+        }, 1000);
+    </script>
+
+</body>
+</html>
