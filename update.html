@@ -5,6 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Integrius - Updates</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: hsl(240, 15%, 9%);
+            color: hsl(0, 0%, 83%);
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: hsl(240, 9%, 17%);
+            color: hsl(0, 0%, 100%);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: hsl(0, 0%, 0%);
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: hsl(0, 0%, 100%);
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: hsl(266, 92%, 58%);
+        }
+
+        main {
+            padding: 2rem 1rem;
+        }
+
+        h2 {
+            text-align: center;
+            color: hsl(0, 0%, 100%);
+        }
+
+        p {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .update-item {
+            margin: 2rem auto;
+            max-width: 600px;
+            background-color: hsl(240, 9%, 17%);
+            padding: 1rem;
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .update-item button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: hsl(266, 92%, 58%);
+            color: hsl(0, 0%, 100%);
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .update-item button:hover {
+            background-color: hsl(266, 72%, 48%);
+        }
+
+        .update-item p {
+            margin-top: 1rem;
+        }
+    </style>
     <script>
         function showComingSoon() {
             const message = document.getElementById('coming-soon-message');
