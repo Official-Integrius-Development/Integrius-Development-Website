@@ -6,6 +6,90 @@
     <title>Integrius - Information</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: hsl(240, 15%, 9%);
+            color: hsl(0, 0%, 83%);
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: hsl(240, 9%, 17%);
+            color: hsl(0, 0%, 100%);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: hsl(0, 0%, 0%);
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: hsl(0, 0%, 100%);
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: hsl(266, 92%, 58%);
+        }
+
+        main {
+            padding: 2rem 1rem;
+        }
+
+        h2 {
+            text-align: center;
+            color: hsl(0, 0%, 100%);
+        }
+
+        p {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .owner-profile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem auto;
+            max-width: 600px;
+            background-color: hsl(240, 9%, 17%);
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+
+        .owner-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .owner-details h3 {
+            margin: 0;
+            color: hsl(0, 0%, 100%);
+        }
+
+        .owner-details p {
+            margin: 0.25rem 0;
+            color: hsl(0, 0%, 83%);
+        }
+    </style>
 </head>
 <body>
 
@@ -31,11 +115,11 @@
                 <div class="owner-details">
                     <h3>Razer.pl</h3>
                     <p>Role: Supervises the discord and does updates</p>
-                    <p>Staus: The G.O.A.T</p>   
+                    <p>Status: The G.O.A.T</p>
                 </div>
             </div>
             <div class="owner-profile">
-                <img src="1c04ff3e89c6401aaee7aaeb02f18ffb.jpg" alt="Owner 2" class="owner-avatar">
+                <img src="nelly.jpg" alt="Owner 2" class="owner-avatar">
                 <div class="owner-details">
                     <h3>Gab</h3>
                     <p>Role: Developed The Integrius Bot</p>
@@ -66,7 +150,7 @@
 
         // Replace with actual Discord user IDs
         const owner1DiscordId = '1060218097543426268'; // Mateusz
-        const owner2DiscordId = '1030124072396410951'; // Gab
+        const owner2DiscordId = ''; // Gab
 
         // Fetch statuses
         fetchDiscordStatus(owner1DiscordId, 'owner1-status');
