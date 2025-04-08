@@ -3,20 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integrius - Information</title>
+    <title>Integrius - Team Members</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <style>
-        /* General styling for the team member section */
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: hsl(240, 15%, 9%);
+            color: hsl(0, 0%, 83%);
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: hsl(240, 9%, 17%);
+            color: hsl(0, 0%, 100%);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: hsl(0, 0%, 0%);
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: hsl(0, 0%, 100%);
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: hsl(266, 92%, 58%);
+        }
+
+        main {
+            padding: 2rem 1rem;
+        }
+
+        h2 {
+            text-align: center;
+            color: hsl(0, 0%, 100%);
+        }
+
+        p {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
         .team-member-profile {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
-            gap: 15px; /* Space between profile picture and details */
+            gap: 15px;
         }
 
         .team-member-avatar {
-            width: 60px; /* Smaller profile pictures */
+            width: 60px;
             height: 60px;
             border-radius: 50%;
             object-fit: cover;
@@ -36,18 +89,15 @@
         .team-member-details p {
             margin: 3px 0;
             font-size: 0.9rem;
-            color: #555;
+            color: hsl(0, 0%, 83%);
         }
 
-        /* Adjusting the spacing between team members */
         .fade-in {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px; /* Space between team member cards */
+            gap: 30px;
             justify-content: center;
         }
-
-        /* You can add more specific styles if needed */
     </style>
 </head>
 <body>
@@ -67,7 +117,7 @@
 
     <main>
         <section id="Information" class="fade-in">
-            <h2>Meet the Team!</h2> <!-- Moved "Meet the Team" here -->
+            <h2>Meet the Team!</h2>
             <div class="team-member-profile">
                 <img src="e9hedixy.png" alt="Team Member 3" class="team-member-avatar">
                 <div class="team-member-details">
@@ -104,8 +154,6 @@
                     document.getElementById(elementId).textContent = 'Offline';
                 });
         }
-
-
     </script>
 
 </body>
