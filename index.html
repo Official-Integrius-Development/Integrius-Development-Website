@@ -5,6 +5,185 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Integrius - Home Page</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(20, 20, 26);
+            color: hsl(0, 0%, 83%);
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: rgb(20, 20, 26);
+            color: hsl(0, 0%, 100%);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: hsl(0, 0%, 0%);
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: hsl(0, 0%, 100%);
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: hsl(266, 92%, 58%);
+        }
+
+        main {
+            padding: 2rem 1rem;
+        }
+
+        h2 {
+            text-align: center;
+            color: hsl(0, 0%, 100%);
+        }
+
+        p {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Card Styles */
+        .plans-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .card {
+            --white: hsl(0, 0%, 100%);
+            --black: hsl(240, 15%, 9%);
+            --paragraph: hsl(0, 0%, 83%);
+            --line: hsl(240, 9%, 17%);
+            --primary: hsl(266, 92%, 58%);
+
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            width: 22rem;
+            background-color: hsla(240, 15%, 9%, 1);
+            background-image: radial-gradient(
+                at 88% 40%,
+                hsla(240, 15%, 9%, 1) 0px,
+                transparent 85%
+            ),
+            radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+            radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+            radial-gradient(at 0% 64%, hsla(263, 93%, 56%, 1) 0px, transparent 85%),
+            radial-gradient(at 41% 94%, hsla(284, 100%, 84%, 1) 0px, transparent 85%),
+            radial-gradient(at 100% 99%, hsla(306, 100%, 57%, 1) 0px, transparent 85%);
+            border-radius: 1rem;
+            box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .card .card_title__container .card_title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .card .card_title__container .card_paragraph {
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--paragraph);
+            text-align: center;
+        }
+
+        .card .line {
+            width: 100%;
+            height: 0.1rem;
+            background-color: var(--line);
+            border: none;
+        }
+
+        .card .card__list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card .card__list .card__list_item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .card .card__list .card__list_item .check {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1.25rem;
+            height: 1.25rem;
+            background-color: var(--primary);
+            border-radius: 50%;
+        }
+
+        .card .card__list .card__list_item .check .check_svg {
+            width: 1rem;
+            height: 1rem;
+            fill: var(--black);
+        }
+
+        .card .card__list .card__list_item .list_text {
+            font-size: 0.875rem;
+            color: var(--white);
+        }
+
+        .card .button {
+            cursor: pointer;
+            padding: 0.75rem;
+            width: 100%;
+            background-image: linear-gradient(
+                0deg,
+                rgba(94, 58, 238, 1) 0%,
+                rgba(197, 107, 240, 1) 100%
+            );
+            font-size: 0.875rem;
+            font-weight: bold;
+            color: var(--white);
+            border: 0;
+            border-radius: 9999px;
+            box-shadow: inset 0 -2px 25px -4px var(--white);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .card .button:hover {
+            background-image: linear-gradient(
+                0deg,
+                rgba(197, 107, 240, 1) 0%,
+                rgba(94, 58, 238, 1) 100%
+            );
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
 
@@ -14,18 +193,19 @@
 
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li> <!-- Link to Home Page -->
+            <li><a href="index.html">Home</a></li>
             <li><a href="information.html">Owners</a></li>
             <li><a href="update.html">Updates</a></li>
             <li><a href="meettheteam.html">Meet The Team</a></li>
             <li><a href="discord.html">Invite The Discord Bot</a></li>
+            <li><a href="server-hosting.html">Server Hosting</a></li>
         </ul>
     </nav>
 
     <main>
         <section id="Information" class="fade-in">
-            <h2>Inegrius Development, Base information</h2>
-            <p>Integrius is a discord bot developed by IhyGab aka killyourself_gab, the Integrius bot contains commands such as: ban, kick, music commands, logging commands, security system, alt identifers, tickets, mute commands and custom commands!.</p>
+            <h2>Inegrius Development, Base Information</h2>
+            <p>Integrius is a discord bot developed by IhyGab aka killyourself_gab, the Integrius bot contains commands such as: ban, kick, music commands, logging commands, security system, alt identifiers, tickets, mute commands, and custom commands!</p>
         </section>
     </main>
 
